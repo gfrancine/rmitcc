@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "serve public",
-    "fmt": "prettier -w public"
+    "fmt": "prettier -w public --ignore-path=.prettierignore"
   },
   "dependencies": {
     "serve": "^14.2.6"
