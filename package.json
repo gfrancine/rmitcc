@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "serve public",
+    "fmt": "prettier -w public"
+  },
+  "dependencies": {
+    "serve": "^14.2.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}
