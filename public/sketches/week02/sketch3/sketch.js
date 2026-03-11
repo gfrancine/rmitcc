@@ -18,7 +18,7 @@ function draw() {
   const CENTER_X = windowWidth / 2;
   const CENTER_Y = windowHeight / 2;
 
-  // circle
+  // face
   fill(255, 0, 255);
   noStroke();
   translate(CENTER_X, CENTER_Y); // move 0,0 to the center
@@ -33,30 +33,31 @@ function draw() {
   textSize(TEXT_SIZE);
   textAlign(CENTER, CENTER);
 
-  // make the face respond to the mouse
-  // TODO: parallax
-  const mouseLookX = (mouseX - windowWidth / 2) / windowWidth;
-  const mouseLookY = (mouseY - windowHeight / 2) / windowHeight;
-  const moveFactor = 30; // arbitrary number
-
-  translate(mouseLookX * moveFactor, mouseLookY * moveFactor);
+  // make the face respond to the mouse and with parallax
+  // first find out how far off the mouse is from the center
+  const mouseOffsetX = ((mouseX - windowWidth / 2) / windowWidth) * 2; // 0 to 1
+  const mouseOffsetY = ((mouseY - windowHeight / 2) / windowHeight) * 2;
+  const moveFactor = 10; // arbitrary number
+  translate(mouseOffsetX * moveFactor, mouseOffsetY * moveFactor);
 
   // eyes
   push();
-  // parallax, eyes move a little more than the rest of the face
-  translate(mouseLookX * moveFactor, mouseLookY * moveFactor);
+  // 1.4 is also an arbitrary finetuned number because movefactor ^ 2 is a little too much
+  translate(mouseOffsetX * moveFactor ** 1.4, mouseOffsetY * moveFactor ** 1.4);
   text("O", -TEXT_SIZE * 2, 0);
   text("0", TEXT_SIZE * 2, 0);
-
   pop();
 
   textSize(TEXT_SIZE * 2);
 
-  //mouth
+  // mouth
   text("-------", 0, TEXT_SIZE * 1.5);
 
-  //nose
+  // nose also moves, about half as much as the eyes
+  push();
+  translate(mouseOffsetX * moveFactor, mouseOffsetY * moveFactor);
   text("L", 0, TEXT_SIZE / 2);
+  pop();
 
   // eyebrows
   push();
