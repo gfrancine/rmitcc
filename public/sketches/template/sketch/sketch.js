@@ -1,3 +1,12 @@
+/*
+
+Week 
+Title
+
+*/
+
+document.title = "Title";
+
 const CANVAS_W = 800;
 const CANVAS_H = 600;
 
