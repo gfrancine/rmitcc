@@ -26,10 +26,10 @@ function draw() {
   const cellWidth = width / rows;
   const cellHeight = height / cols;
 
-  for (i = 1; i < rows + 1; i++) {
+  for (let i = 1; i < rows + 1; i++) {
     const cellX = marginX + cellWidth * (i - 1); // top left
 
-    for (j = 1; j < cols + 1; j++) {
+    for (let j = 1; j < cols + 1; j++) {
       const cellY = marginY + cellHeight * (j - 1);
       const value = (i / rows + j / cols) / 2; // 0 to 1
 
