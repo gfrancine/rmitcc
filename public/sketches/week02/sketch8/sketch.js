@@ -5,7 +5,7 @@ Lerping / Sine Waves
 
 */
 
-document.title = "Lerping / Sine Waves";
+document.title = "W2 Lerping / Sine Waves";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -20,8 +20,8 @@ function draw() {
   if (t === div) t = 0;
   const value = Math.abs(Math.sin(t));
 
-  const color0 = color(255, 0, 255);
-  const color1 = color(0, 0, 255);
+  const color0 = color(0, 0, 255);
+  const color1 = color(0, 255, 0);
   background(lerpColor(color0, color1, value));
 
   textSize(windowHeight / 10);

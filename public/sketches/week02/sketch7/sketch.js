@@ -5,7 +5,7 @@ Color Lerping
 
 */
 
-document.title = "Color Lerping";
+document.title = "W2 Color Lerping";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);

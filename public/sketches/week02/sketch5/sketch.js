@@ -5,7 +5,7 @@ Drawing / Velocity
 
 */
 
-document.title = "Drawing / Velocity";
+document.title = "W2 Drawing / Velocity";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);

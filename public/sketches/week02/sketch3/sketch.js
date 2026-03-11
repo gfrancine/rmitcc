@@ -5,43 +5,50 @@ Faces
 
 */
 
-document.title = "Faces";
+document.title = "W2 Faces";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(255, 0, 255);
+  background(127);
 
-  const TEXT_SIZE = windowWidth / 10;
+  const TEXT_SIZE = Math.min(windowWidth, windowHeight) / 10;
   const CENTER_X = windowWidth / 2;
   const CENTER_Y = windowHeight / 2;
 
-  fill(0, 0, 0, 0);
+  // circle
+  fill(255, 0, 255);
+  noStroke();
+  translate(CENTER_X, CENTER_Y); // move 0,0 to the center
+  ellipse(0, 0, TEXT_SIZE * 8);
+
+  fill(0, 0, 255);
   stroke(0, 255, 0);
   strokeWeight(20);
 
-  translate(CENTER_X, CENTER_Y); // move 0,0 to the center
-  ellipse(0, 0, TEXT_SIZE * 8);
-  fill(0, 0, 255);
-
+  // facial features
   strokeWeight(50);
   textSize(TEXT_SIZE);
   textAlign(CENTER, CENTER);
 
   // make the face respond to the mouse
   // TODO: parallax
+  const mouseLookX = (mouseX - windowWidth / 2) / windowWidth;
+  const mouseLookY = (mouseY - windowHeight / 2) / windowHeight;
   const moveFactor = 30; // arbitrary number
 
-  translate(
-    ((mouseX - windowWidth / 2) / windowWidth) * moveFactor,
-    ((mouseY - windowHeight / 2) / windowHeight) * moveFactor,
-  );
+  translate(mouseLookX * moveFactor, mouseLookY * moveFactor);
 
   // eyes
-  text("W", -TEXT_SIZE * 2, 0);
-  text("X", TEXT_SIZE * 2, 0);
+  push();
+  // parallax, eyes move a little more than the rest of the face
+  translate(mouseLookX * moveFactor, mouseLookY * moveFactor);
+  text("O", -TEXT_SIZE * 2, 0);
+  text("0", TEXT_SIZE * 2, 0);
+
+  pop();
 
   textSize(TEXT_SIZE * 2);
 

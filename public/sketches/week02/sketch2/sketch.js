@@ -5,17 +5,14 @@ Rows and Columns
 
 */
 
-document.title = "Rows and Columns";
+document.title = "W2 Rows and Columns";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(255, 0, 255);
-  fill(0, 255, 0, 0);
-  stroke(0, 255, 0);
-  strokeWeight(2);
+  background(127);
 
   const rows = 10;
   const cols = 10;
@@ -37,6 +34,11 @@ function draw() {
       const value = (i / rows + j / cols) / 2; // 0 to 1
 
       push();
+      // go from blue to magenta
+      const magenta = color(255, 0, 255);
+      const blue = color(0, 0, 255);
+      noStroke();
+      fill(lerpColor(blue, magenta, value));
 
       // origin starts  at the top left, so we need to do all this
       // set origin to the middle of the grid "cell"
@@ -52,6 +54,8 @@ function draw() {
       /*
       // debug: show cells
       push();
+      stroke(0, 255, 0);
+      strokeWeight(2);
       rect(cellX, cellY, cellWidth, cellHeight);
       pop();
       */

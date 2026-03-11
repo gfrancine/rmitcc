@@ -1,17 +1,24 @@
 /*
 
 Week 2
-Rows and Columns
+Drawing
 
 */
+
+document.title = "W2 Drawing";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255, 0, 255);
+
   textSize(windowHeight / 20);
   textAlign(CENTER, CENTER);
   fill(0, 255, 0);
-  text("draw something!", windowWidth / 2, windowWidth / 2);
+  text(
+    "draw something!\n(press down to draw)",
+    windowWidth / 2,
+    windowHeight / 2,
+  );
 }
 
 function draw() {
@@ -20,7 +27,6 @@ function draw() {
 
   strokeWeight(2);
   stroke(0, 255, 0);
-
   fill(0, 0, 0, 0);
   if (mouseIsPressed) fill(0, 255, 0);
 

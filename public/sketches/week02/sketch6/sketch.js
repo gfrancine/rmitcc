@@ -5,7 +5,7 @@ Drawing / Lines
 
 */
 
-document.title = "Drawing / Lines";
+document.title = "W2 Drawing / Lines";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
