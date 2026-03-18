@@ -8,6 +8,7 @@ Title
 document.title = "W - Title";
 
 const SHARED_PATH = "../../../shared/";
+const COLORS = GLOBALS.colors;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);

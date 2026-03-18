@@ -13,9 +13,10 @@ const GLOBALS = {};
     // neutrals
     black: p5Color(0),
     white: p5Color(255),
+    grey90: p5Color(230),
     grey50: p5Color(127),
     // primaries/extremes
-    red: p5Color(255, 0),
+    red: p5Color(255, 0, 0),
     green: p5Color(0, 255, 0),
     magenta: p5Color(255, 0, 255),
     blue: p5Color(0, 0, 255),
