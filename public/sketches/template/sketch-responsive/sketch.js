@@ -5,7 +5,9 @@ Title
 
 */
 
-document.title = "Title";
+document.title = "W - Title";
+
+const SHARED_PATH = "../../../shared/";
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -13,7 +15,7 @@ function setup() {
 
 function draw() {
   background(220);
-  ellipse(CANVAS_W / 2, CANVAS_H / 2, 50, 50);
+  ellipse(width / 2, height / 2, 50, 50);
 }
 
 function windowResized() {

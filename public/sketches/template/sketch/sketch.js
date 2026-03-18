@@ -5,7 +5,9 @@ Title
 
 */
 
-document.title = "Title";
+document.title = "W - Title";
+
+const SHARED_PATH = "../../../shared/";
 
 const CANVAS_W = 800;
 const CANVAS_H = 600;
