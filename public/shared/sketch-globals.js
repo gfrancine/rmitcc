@@ -13,6 +13,7 @@ const GLOBALS = {};
     // neutrals
     black: p5Color(0),
     white: p5Color(255),
+    none: p5Color(0, 0, 0, 0),
     grey90: p5Color(230),
     grey50: p5Color(127),
     // primaries/extremes
@@ -34,7 +35,7 @@ const GLOBALS = {};
 
   // sets up a "record" button and records the canvas
   // https://stackoverflow.com/questions/42437971/exporting-a-video-in-p5-js
-  GLOBALS.setupRecorder = function () {
+  GLOBALS.setupRecorder = (framerate = 60) => {
     const container = document.createElement("div");
     container.style = "position: absolute; top: 0; left: 0;";
 
@@ -47,7 +48,7 @@ const GLOBALS = {};
       chunks = [];
       chunks.length = 0;
 
-      const stream = document.querySelector("canvas").captureStream(60);
+      const stream = document.querySelector("canvas").captureStream(framerate);
       const recorder = new MediaRecorder(stream, {
         mimeType: "video/mp4",
         videoBitsPerSecond: 12,
@@ -61,15 +62,14 @@ const GLOBALS = {};
 
       btn.onclick = () => {
         recorder.stop();
-        btn.textContent = "start recording";
-        btn.onclick = record;
+        btn.remove();
       };
 
       recorder.onstop = () => {
         const blob = new Blob(chunks, { type: "video/mp4" });
 
         const vid = document.createElement("video");
-        vid.style = "width: 100%";
+        vid.style = "width: 50%";
         vid.controls = true;
         vid.src = URL.createObjectURL(blob);
         container.append(vid);
