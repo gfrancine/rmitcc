@@ -10,19 +10,7 @@ document.title = "W3 - Text Points / Stretching";
 const SHARED_PATH = "../../../shared/";
 const COLORS = GLOBALS.colors;
 
-let font;
-
-// https://p5js.org/reference/p5.Font/textToPoints/
-// https://p5js.org/reference/p5.Font/textBounds/
-
-async function setup() {
-  // preload function deprecated in p5 2.0
-  // https://dev.to/limzykenneth/asynchronous-p5js-20-458f
-  font = await loadFont(SHARED_PATH + "fonts/XanhMono-Regular.ttf");
-  createCanvas(windowWidth, windowHeight);
-  // rectMode(CENTER); // https://p5js.org/reference/p5/rectMode/
-  textFont(font);
-}
+// Text boxes
 
 const textBoxes /* {
   textStr: string,
@@ -33,6 +21,33 @@ const textBoxes /* {
   x1: number
   y1: number
 } */ = [];
+
+function p5Color(...values) {
+  return () => color(...values);
+}
+
+// copied from globals
+const TEXTBOX_COLORS = {
+  // neutrals
+  black: p5Color(0),
+  white: p5Color(255),
+  grey50: p5Color(127),
+  // primaries/extremes
+  red: p5Color(255, 0, 0),
+  green: p5Color(0, 255, 0),
+  magenta: p5Color(255, 0, 255),
+  blue: p5Color(0, 0, 255),
+  // olives, murky yellows/greens/browns
+  brass: p5Color(180, 170, 45),
+  wasabi: p5Color(127, 140, 50),
+  // intense warm
+  pumpkin: p5Color(255, 120, 40),
+  // pinks
+  fuchsia: p5Color(245, 0, 180),
+  // blues/purples
+  crystalBlue: p5Color(100, 175, 250),
+  lavenderBlue: p5Color(127, 130, 233),
+};
 
 // "thing" by leonard cohen
 const phrases = `
@@ -72,13 +87,12 @@ function randomTextBox(x0, y0, x1, y1) {
   phrasesCursor++;
   if (phrasesCursor === phrases.length) phrasesCursor = 0;
 
-  const colorKeys = Object.keys(COLORS).sort(() => Math.random() - 0.5);
-  colorKeys.splice(colorKeys.indexOf("grey90"), 1); // remove the sketch background color
+  const colorKeys = Object.keys(TEXTBOX_COLORS).sort(() => Math.random() - 0.5);
   const color1 = colorKeys.pop();
   const color2 = colorKeys.pop();
   // console.log(color1, color2); // debug
-  const bg = COLORS[color1];
-  const fg = COLORS[color2];
+  const bg = TEXTBOX_COLORS[color1];
+  const fg = TEXTBOX_COLORS[color2];
 
   return {
     textStr,
@@ -91,7 +105,37 @@ function randomTextBox(x0, y0, x1, y1) {
   };
 }
 
+// mouse dragging
+
 let mouseDragStartPos = null; /* { x: number, y: number } */
+
+function mousePressed() {
+  // drag start
+  if (!mouseDragStartPos) {
+    mouseDragStartPos = { x: mouseX, y: mouseY };
+  }
+}
+
+function mouseReleased() {
+  // drag end
+  textBoxes.push(
+    randomTextBox(mouseDragStartPos.x, mouseDragStartPos.y, mouseX, mouseY),
+  );
+
+  mouseDragStartPos = null;
+}
+
+// draw
+
+// https://p5js.org/reference/p5.Font/textBounds/
+
+async function setup() {
+  // preload function deprecated in p5 2.0
+  // https://dev.to/limzykenneth/asynchronous-p5js-20-458f
+  const font = await loadFont(SHARED_PATH + "fonts/XanhMono-Regular.ttf");
+  createCanvas(windowWidth, windowHeight);
+  textFont(font);
+}
 
 function draw() {
   background(COLORS.grey90());
@@ -163,22 +207,6 @@ function draw() {
     rect(minX, minY, maxX - minX, maxY - minY);
     pop();
   }
-}
-
-function mousePressed() {
-  // drag start
-  if (!mouseDragStartPos) {
-    mouseDragStartPos = { x: mouseX, y: mouseY };
-  }
-}
-
-function mouseReleased() {
-  // drag end
-  textBoxes.push(
-    randomTextBox(mouseDragStartPos.x, mouseDragStartPos.y, mouseX, mouseY),
-  );
-
-  mouseDragStartPos = null;
 }
 
 function windowResized() {
