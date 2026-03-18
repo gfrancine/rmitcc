@@ -34,8 +34,26 @@ const textBoxes /* {
   y1: number
 } */ = [];
 
+// "thing" by leonard cohen
 const phrases = `
-hello p5!
+i am
+this thing
+that needs
+to sing
+I love
+to sing
+to my beloved's
+other
+thing
+O G-D
+I want
+to sing
+I Am
+this thing
+THAT 
+NEEDS
+TO 
+SING!
 `
   .trim()
   //.split(/\s/);
@@ -83,8 +101,8 @@ function draw() {
     push();
     fill(0);
     textAlign(CENTER, CENTER);
-    textSize(height / 30);
-    text("click and drag!", width / 2, height / 2);
+    textSize(height / 50);
+    text("click and drag!\n('Thing' by Leonard Cohen)", width / 2, height / 2);
     pop();
   }
 
