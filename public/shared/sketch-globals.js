@@ -81,4 +81,15 @@ const GLOBALS = {};
       btn.textContent = "stop recording";
     };
   };
+
+  // https://math.stackexchange.com/a/4031938 <3
+  // https://www.desmos.com/calculator/d05kwzohup
+  // sine function with adjustable steepness where k is the amount of deformation
+  // k ~= 3 resembles quad easing the most
+  GLOBALS.steepSine = (x, k = 3) => Math.atan(k * Math.sin(x)) / Math.atan(k);
+
+  GLOBALS.unitSine = (x) => Math.sin(PI * (x - 0.5)) / 2 - 0.5;
+
+  GLOBALS.unitSteepSine = (x, k) =>
+    GLOBALS.steeperSine(PI * (x - 0.5), k) / 2 - 0.5;
 })();
