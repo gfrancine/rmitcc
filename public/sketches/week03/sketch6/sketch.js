@@ -38,7 +38,7 @@ const RAND_Y = getRandomLookup(1000);
 let t = 0;
 
 function draw() {
-  t += 1 / 50;
+  t += (deltaTime / 1000) * 1.3; // arbitrary number
   const modifier = GLOBALS.steepSine(t, 4) / 2 + 0.5; // 0 to 1;
 
   background(220);

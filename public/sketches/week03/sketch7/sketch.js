@@ -26,7 +26,7 @@ async function setup() {
 let t = 0;
 
 function draw() {
-  t += 1 / 80;
+  t += (deltaTime / 1000) * 0.7; // arbitrary number
   const modifier = Math.abs(Math.sin(t));
 
   background(COLORS.grey50());
