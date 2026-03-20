@@ -96,8 +96,8 @@ function randomTextBox(x0, y0, x1, y1) {
 
   return {
     textStr,
-    bg,
-    fg,
+    bg, //: TEXTBOX_COLORS.blue,
+    fg, //: TEXTBOX_COLORS.grey50,
     x0,
     y0,
     x1,
@@ -128,6 +128,10 @@ function mouseReleased() {
 // draw
 
 // https://p5js.org/reference/p5.Font/textBounds/
+
+function handleNaN(n) {
+  return isNaN(n) ? 0 : n;
+}
 
 async function setup() {
   // preload function deprecated in p5 2.0
@@ -184,7 +188,7 @@ function draw() {
 
     // compensate the differences
     translate(minX, minY);
-    scale(w / bounds.w, h / bounds.h); // bugfix note: scale first before applying position adjustments; otherwise, they get scaled too
+    scale(handleNaN(w / bounds.w), handleNaN(h / bounds.h)); // bugfix note: scale first before applying position adjustments; otherwise, they get scaled too
 
     // draw the text
     fill(textBox.fg());
