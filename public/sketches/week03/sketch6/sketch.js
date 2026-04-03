@@ -72,7 +72,7 @@ function draw() {
 
   const textPoints = font.textToPoints(textStr, ...textPos, {
     sampleFactor: (0.01 + 0.03 * (1 - modifier)) * sfScaleFactor, // 0.03 * sfScaleFactor,
-    simplifyThreshold: 0,
+    simplifyThreshold: 0, //0.001,
   });
 
   const drawPointsCallbacks = []; // draw the circles after drawing the shape

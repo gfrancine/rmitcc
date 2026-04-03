@@ -27,6 +27,7 @@ const GLOBALS = {};
     // intense warm
     pumpkin: p5Color(255, 120, 40),
     // pinks
+    lightFuchsia: p5Color(255, 127, 255),
     fuchsia: p5Color(245, 0, 180),
     // blues/purples
     crystalBlue: p5Color(100, 175, 250),
@@ -85,11 +86,12 @@ const GLOBALS = {};
   // https://math.stackexchange.com/a/4031938 <3
   // https://www.desmos.com/calculator/d05kwzohup
   // sine function with adjustable steepness where k is the amount of deformation
-  // k ~= 3 resembles quad easing the most
+  // k = 0 is a sine wave, k ~= 3 resembles quad easing the most
   GLOBALS.steepSine = (x, k = 3) => Math.atan(k * Math.sin(x)) / Math.atan(k);
 
+  // a sine function that goes from 0 to 1, and equals 1 when x = 1 instead of pi
   GLOBALS.unitSine = (x) => Math.sin(PI * (x - 0.5)) / 2 - 0.5;
 
   GLOBALS.unitSteepSine = (x, k) =>
-    GLOBALS.steeperSine(PI * (x - 0.5), k) / 2 - 0.5;
+    GLOBALS.steepSine(PI * (x - 0.5), k) / 2 - 0.5;
 })();
