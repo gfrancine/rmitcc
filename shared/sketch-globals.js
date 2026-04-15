@@ -1,0 +1,111 @@
+//
+const GLOBALS = {};
+
+(() => {
+  function p5Color(...values) {
+    return () => color(...values);
+  }
+
+  // usage: GLOBALS.colors.black() -> p5 color
+  // https://pinterest.com/gracefrancine/color/
+  // https://colors.artyclick.com/color-name-finder/
+  GLOBALS.colors = {
+    // neutrals
+    black: p5Color(0),
+    white: p5Color(255),
+    none: p5Color(0, 0, 0, 0),
+    grey90: p5Color(230),
+    grey50: p5Color(127),
+    // primaries/extremes
+    red: p5Color(255, 0, 0),
+    green: p5Color(0, 255, 0),
+    magenta: p5Color(255, 0, 255),
+    blue: p5Color(0, 0, 255),
+    // olives, murky yellows/greens/browns
+    brass: p5Color(180, 170, 45),
+    wasabi: p5Color(127, 140, 50),
+    // intense warm
+    pumpkin: p5Color(255, 120, 40),
+    // pinks
+    lightFuchsia: p5Color(255, 127, 255),
+    fuchsia: p5Color(245, 0, 180),
+    // blues/purples
+    crystalBlue: p5Color(100, 175, 250),
+    lavenderBlue: p5Color(127, 130, 233),
+  };
+
+  // sets up a "record" button and records the canvas
+  // https://stackoverflow.com/questions/42437971/exporting-a-video-in-p5-js
+  GLOBALS.setupRecorder = (framerate = 60) => {
+    const container = document.createElement("div");
+    container.style = "position: absolute; top: 0; left: 0;";
+
+    const btn = document.createElement("button");
+    btn.textContent = "start recording";
+    document.body.append(container);
+    container.append(btn);
+
+    btn.onclick = () => {
+      chunks = [];
+      chunks.length = 0;
+
+      const stream = document.querySelector("canvas").captureStream(framerate);
+      const recorder = new MediaRecorder(stream, {
+        mimeType: "video/mp4",
+        videoBitsPerSecond: 12,
+      });
+
+      recorder.ondataavailable = (e) => {
+        if (e.data.size) {
+          chunks.push(e.data);
+        }
+      };
+
+      btn.onclick = () => {
+        recorder.stop();
+        btn.remove();
+      };
+
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: "video/mp4" });
+
+        const vid = document.createElement("video");
+        vid.style = "width: 50%";
+        vid.controls = true;
+        vid.src = URL.createObjectURL(blob);
+        container.append(vid);
+
+        // document.body.style.overflow = "auto";
+      };
+
+      recorder.start();
+      btn.textContent = "stop recording";
+    };
+  };
+
+  // https://math.stackexchange.com/a/4031938 <3
+  // https://www.desmos.com/calculator/d05kwzohup
+  // sine function with adjustable steepness where k is the amount of deformation
+  // k = 0 is a sine wave, k ~= 3 resembles quad easing the most
+  GLOBALS.steepSine = (x, k = 3) => Math.atan(k * Math.sin(x)) / Math.atan(k);
+
+  // a sine function that goes from 0 to 1, and equals 1 when x = 1 instead of pi
+  GLOBALS.unitSine = (x) => Math.sin(PI * (x - 0.5)) / 2 - 0.5;
+
+  GLOBALS.unitSteepSine = (x, k) =>
+    GLOBALS.steepSine(PI * (x - 0.5), k) / 2 - 0.5;
+
+  // get an array of random numbers that sum up to 1
+  GLOBALS.getRandomUnitArray = (length, scale = 1) => {
+    const array = [];
+
+    let sum = 0;
+    for (let i = 0; i < length; i++) {
+      const v = Math.random() * scale;
+      array.push(v);
+      sum += v;
+    }
+
+    return array.map((v) => v / sum);
+  };
+})();
