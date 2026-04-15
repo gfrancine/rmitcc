@@ -2,28 +2,36 @@
 
 <!--REPLACE SKETCHES-->
 
-## Hello P5
-![Hello P5](./sketch1/thumbnail.png)
+## [Hello P5](sketch1)
 
-## Rows and Columns
-![Rows and Columns](./sketch2/thumbnail.png)
+![Hello P5](sketch1/thumbnail.png)
 
-## Faces
-![Faces](./sketch3/thumbnail.png)
+## [Rows and Columns](sketch2)
 
-## Drawing
-![Drawing](./sketch4/thumbnail.png)
+![Rows and Columns](sketch2/thumbnail.png)
 
-## Drawing / Velocity
-![Drawing / Velocity](./sketch5/thumbnail.png)
+## [Faces](sketch3)
 
-## Drawing / Lines
-![Drawing / Lines](./sketch6/thumbnail.png)
+![Faces](sketch3/thumbnail.png)
 
-## Color Lerping
-![Color Lerping](./sketch7/thumbnail.png)
+## [Drawing](sketch4)
 
-## Lerping / Sine Waves
-![Lerping / Sine Waves](./sketch8/thumbnail.png)
+![Drawing](sketch4/thumbnail.png)
+
+## [Drawing / Velocity](sketch5)
+
+![Drawing / Velocity](sketch5/thumbnail.png)
+
+## [Drawing / Lines](sketch6)
+
+![Drawing / Lines](sketch6/thumbnail.png)
+
+## [Color Lerping](sketch7)
+
+![Color Lerping](sketch7/thumbnail.png)
+
+## [Lerping / Sine Waves](sketch8)
+
+![Lerping / Sine Waves](sketch8/thumbnail.png)
 
 <!--REPLACE SKETCHES-->

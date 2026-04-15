@@ -2,28 +2,36 @@
 
 <!--REPLACE SKETCHES-->
 
-## Images
-![Images](./sketch1/thumbnail.png)
+## [Images](sketch1)
 
-## Images / Cursors
-![Images / Cursors](./sketch2/thumbnail.png)
+![Images](sketch1/thumbnail.png)
 
-## Images / Collage
-![Images / Collage](./sketch3/thumbnail.png)
+## [Images / Cursors](sketch2)
 
-## Hello Camera
-![Hello Camera](./sketch4/thumbnail.png)
+![Images / Cursors](sketch2/thumbnail.png)
 
-## Camera Mosaic
-![Camera Mosaic](./sketch5/thumbnail.png)
+## [Images / Collage](sketch3)
 
-## Video Processing
-![Video Processing](./sketch6/thumbnail.png)
+![Images / Collage](sketch3/thumbnail.png)
 
-## Video / ASCII
-![Video / ASCII](./sketch7/thumbnail.png)
+## [Hello Camera](sketch4)
 
-## Video Processing / Mosaic
-![Video Processing / Mosaic](./sketch8/thumbnail.png)
+![Hello Camera](sketch4/thumbnail.png)
+
+## [Camera Mosaic](sketch5)
+
+![Camera Mosaic](sketch5/thumbnail.png)
+
+## [Video Processing](sketch6)
+
+![Video Processing](sketch6/thumbnail.png)
+
+## [Video / ASCII](sketch7)
+
+![Video / ASCII](sketch7/thumbnail.png)
+
+## [Video Processing / Mosaic](sketch8)
+
+![Video Processing / Mosaic](sketch8/thumbnail.png)
 
 <!--REPLACE SKETCHES-->
