@@ -94,4 +94,18 @@ const GLOBALS = {};
 
   GLOBALS.unitSteepSine = (x, k) =>
     GLOBALS.steepSine(PI * (x - 0.5), k) / 2 - 0.5;
+
+  // get an array of random numbers that sum up to 1
+  GLOBALS.getRandomUnitArray = (length, scale = 1) => {
+    const array = [];
+
+    let sum = 0;
+    for (let i = 0; i < length; i++) {
+      const v = Math.random() * scale;
+      array.push(v);
+      sum += v;
+    }
+
+    return array.map((v) => v / sum);
+  };
 })();
