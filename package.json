@@ -1,12 +1,16 @@
 {
   "scripts": {
     "start": "serve public",
-    "fmt": "prettier -w public --ignore-path=.prettierignore"
+    "build": "node scripts/build-readmes.js",
+    "deploy": "gh-pages -d public",
+    "fmt": "prettier -w README.md public scripts --ignore-path=.prettierignore",
+    "precommit": "npm run build && npm run fmt"
   },
   "dependencies": {
     "serve": "^14.2.6"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "prettier": "^3.8.1"
   }
 }
