@@ -1,7 +1,7 @@
 /*
 
 Generated with Gemini Fast 3
-Prompt:
+Original prompt:
 
 I'm writing a NodeJS build script called build-week-readmes. 
 
@@ -75,16 +75,16 @@ const MARKER = "<!--REPLACE SKETCHES-->";
  * Sketch Title
  * * /
  */
-function getSketchTitle(filePath, folderName) {
+function getSketchTitle(filePath) {
   try {
     const content = fs.readFileSync(filePath, "utf8");
     const commentRegex = /\/\*[\s\S]*?Week\s+\d+\s*\n(.*?)\n[\s\S]*?\*\//;
     const match = content.match(commentRegex);
 
     // Return the title if found, otherwise fallback to folder name
-    return match ? match[1].trim() : folderName;
+    if (match) return match[1].trim();
   } catch (err) {
-    return folderName;
+    return;
   }
 }
 
@@ -116,13 +116,28 @@ function updateWeekReadmes() {
     // 3. Generate the Markdown list
     const sketchMarkdown = sketches
       .map((sketchFolder) => {
-        const sketchJsPath = path.join(weekPath, sketchFolder, "sketch.js");
-        const title = getSketchTitle(sketchJsPath, sketchFolder);
+        const sketchFolderPath = path.join(weekPath, sketchFolder);
+        const title = getSketchTitle(path.join(sketchFolderPath, "sketch.js"));
+
+        // Edit: don't create an entry if it doesn't have a proper header
+        if (!title) return "";
 
         // We use relative paths for the README links
-        return `## [${title}](${sketchFolder})\n![${title}](${sketchFolder}/thumbnail.png)`;
+        let entryStr = `\n## [${title}](${sketchFolder})`;
+
+        // Edit: only add a thumbnail if it exists
+        const THUMBNAIL_EXTS = ["png", "jpg", "jpeg", "svg", "gif"];
+
+        for (const ext of THUMBNAIL_EXTS) {
+          if (fs.existsSync(path.join(sketchFolderPath, "thumbnail." + ext))) {
+            entryStr += `\n![${title}](${sketchFolder}/thumbnail.${ext})`;
+            break;
+          }
+        }
+
+        return entryStr + "\n";
       })
-      .join("\n\n");
+      .join("");
 
     // 4. Update the README content
     const readmeContent = fs.readFileSync(readmePath, "utf8");
@@ -131,7 +146,7 @@ function updateWeekReadmes() {
     const markerRegex = new RegExp(`${MARKER}[\\s\\S]*${MARKER}`);
     const updatedContent = readmeContent.replace(
       markerRegex,
-      `${MARKER}\n\n${sketchMarkdown}\n\n${MARKER}`,
+      `${MARKER}\n${sketchMarkdown}\n${MARKER}`,
     );
 
     fs.writeFileSync(readmePath, updatedContent);
