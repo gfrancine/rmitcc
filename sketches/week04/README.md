@@ -1,4 +1,4 @@
-# Week 4 - Macrotypography
+# Week 4 — Macrotypography and OOP
 
 <!--REPLACE SKETCHES-->
 

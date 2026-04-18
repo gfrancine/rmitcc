@@ -1,4 +1,4 @@
-# Week 2 - Hello p5
+# Week 2 — Hello p5
 
 <!--REPLACE SKETCHES-->
 
