@@ -1,4 +1,4 @@
-# Week 3 - Typography
+# Week 3 — Typography
 
 <!--REPLACE SKETCHES-->
 

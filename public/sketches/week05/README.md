@@ -1,4 +1,4 @@
-# Week 5 - Images and Video
+# Week 5 — Images and Video
 
 <!--REPLACE SKETCHES-->
 
