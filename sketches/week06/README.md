@@ -18,16 +18,24 @@
 
 ![Randomness / Glitch](sketch3/thumbnail.png)
 
+## [Randomness / Fragmentation](sketch3-1)
+
+![Randomness / Fragmentation](sketch3-1/thumbnail.png)
+
 ## [Perlin Noise](sketch4)
 
 ![Perlin Noise](sketch4/thumbnail.png)
 
-## [Perlin Noise / ADGIDW25 Identity](sketch4 copy)
+## [Perlin Noise / ADGIDW25 Identity](sketch4-1)
 
-![Perlin Noise / ADGIDW25 Identity](sketch4 copy/thumbnail.png)
+![Perlin Noise / ADGIDW25 Identity](sketch4-1/thumbnail.png)
 
-## [Perlin Noise + Glitching](sketch4 copy 2)
+## [Perlin Noise + Glitching](sketch4-2)
 
-![Perlin Noise + Glitching](sketch4 copy 2/thumbnail.png)
+![Perlin Noise + Glitching](sketch4-2/thumbnail.png)
+
+## [Glitchy Title](sketch5)
+
+![Glitchy Title](sketch5/thumbnail.png)
 
 <!--REPLACE SKETCHES-->
