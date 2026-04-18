@@ -34,6 +34,38 @@ const GLOBALS = {};
     lavenderBlue: p5Color(127, 130, 233),
   };
 
+  /** assign attributes to an element */
+  function assignAttributes(element, attributes /* Record<string, string> */) {
+    for (const [attr, value] of Object.entries(attributes)) {
+      element.attribute(attr, value);
+    }
+    return element;
+  }
+
+  /** React-like createElement shortcut */
+  function el(
+    tag /* string */,
+    attributes = {} /* Record<string, string>? */,
+    children = [] /* string[]? */,
+  ) {
+    const element = createElement(tag);
+
+    assignAttributes(element, attributes);
+
+    children.forEach((child) => {
+      if (typeof child === "string") {
+        const span = createElement("span", child); // "text" nodes
+        element.child(span);
+      } else {
+        element.child(child);
+      }
+    });
+
+    return element;
+  }
+
+  GLOBALS.el = el;
+
   // sets up a "record" button and records the canvas
   // https://stackoverflow.com/questions/42437971/exporting-a-video-in-p5-js
   GLOBALS.setupRecorder = (framerate = 60) => {
@@ -81,6 +113,10 @@ const GLOBALS = {};
       recorder.start();
       btn.textContent = "stop recording";
     };
+  };
+
+  GLOBALS.handleNaN = (n) => {
+    return isNaN(n) ? 0 : n;
   };
 
   // https://math.stackexchange.com/a/4031938 <3
