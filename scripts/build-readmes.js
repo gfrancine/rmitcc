@@ -146,11 +146,7 @@ function updateWeekReadmes() {
             let mediaStr = `\n\n![${title}](${link})`;
 
             if (ext === "mp4")
-              mediaStr =
-                `\n\n<video width="600" height="400" controls>` +
-                `<source src="${link} type="video/mp4" />` +
-                `Video playback not supported` +
-                `</video>`;
+              mediaStr = `\n\n<video width="600" height="400" src="${link}" controls loop></video>`;
 
             entryStr += mediaStr;
             break;
