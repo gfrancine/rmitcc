@@ -12,7 +12,7 @@
 
 ## [Faces](sketch3)
 
-[![Faces](sketch3/thumbnail.mp4)](sketch3/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch3/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Drawing](sketch4)
 
@@ -20,7 +20,7 @@
 
 ## [Drawing / Velocity](sketch5)
 
-[![Drawing / Velocity](sketch5/thumbnail.mp4)](sketch5/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch5/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Drawing / Lines](sketch6)
 
@@ -28,10 +28,10 @@
 
 ## [Color Lerping](sketch7)
 
-[![Color Lerping](sketch7/thumbnail.mp4)](sketch7/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch7/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Lerping / Sine Waves](sketch8)
 
-[![Lerping / Sine Waves](sketch8/thumbnail.mp4)](sketch8/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch8/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 <!--REPLACE SKETCHES-->

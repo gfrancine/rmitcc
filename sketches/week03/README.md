@@ -8,11 +8,11 @@
 
 ## [Fonts / Datavis](sketch2)
 
-[![Fonts / Datavis](sketch2/thumbnail.mp4)](sketch2/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch2/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Fonts / Drawing](sketch3)
 
-[![Fonts / Drawing](sketch3/thumbnail.mp4)](sketch3/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch3/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Text Points](sketch4)
 
@@ -20,18 +20,18 @@
 
 ## [Text Points / Social Distancing](sketch5)
 
-[![Text Points / Social Distancing](sketch5/thumbnail.mp4)](sketch5/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch5/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Text Points / Glyphs](sketch6)
 
-[![Text Points / Glyphs](sketch6/thumbnail.mp4)](sketch6/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch6/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Text Points / Indices](sketch7)
 
-[![Text Points / Indices](sketch7/thumbnail.mp4)](sketch7/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch7/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Text Points / Stretching](sketch8)
 
-[![Text Points / Stretching](sketch8/thumbnail.mp4)](sketch8/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch8/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 <!--REPLACE SKETCHES-->

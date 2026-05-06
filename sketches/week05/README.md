@@ -8,7 +8,7 @@
 
 ## [Images / Cursors](sketch2)
 
-[![Images / Cursors](sketch2/thumbnail.mp4)](sketch2/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch2/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Images / Collage](sketch3)
 
@@ -24,14 +24,14 @@
 
 ## [Video Processing](sketch6)
 
-[![Video Processing](sketch6/thumbnail.mp4)](sketch6/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch6/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Video / ASCII](sketch7)
 
-[![Video / ASCII](sketch7/thumbnail.mp4)](sketch7/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch7/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 ## [Video Processing / Mosaic](sketch8)
 
-[![Video Processing / Mosaic](sketch8/thumbnail.mp4)](sketch8/thumbnail.mp4)
+<video width="600" height="400" controls><source src="sketch8/thumbnail.mp4 type="video/mp4">Video playback not supported</video>
 
 <!--REPLACE SKETCHES-->
