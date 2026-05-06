@@ -138,11 +138,15 @@ function updateWeekReadmes() {
         if (description) entryStr += `\n\n${description}`;
 
         // Edit: only add a thumbnail if it exists
-        const THUMBNAIL_EXTS = ["png", "jpg", "jpeg", "svg", "gif"];
+        const THUMBNAIL_EXTS = ["png", "jpg", "jpeg", "svg", "mp4", "gif"];
 
         for (const ext of THUMBNAIL_EXTS) {
           if (fs.existsSync(path.join(sketchFolderPath, "thumbnail." + ext))) {
-            entryStr += `\n\n![${title}](${sketchFolder}/thumbnail.${ext})`;
+            const link = `${sketchFolder}/thumbnail.${ext}`;
+            let mediaStr = `\n\n![${title}](${link})`;
+            if (ext === "mp4") mediaStr = `\n\n[![${title}](${link})](${link})`;
+
+            entryStr += mediaStr;
             break;
           }
         }
