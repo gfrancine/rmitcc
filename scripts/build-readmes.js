@@ -144,7 +144,13 @@ function updateWeekReadmes() {
           if (fs.existsSync(path.join(sketchFolderPath, "thumbnail." + ext))) {
             const link = `${sketchFolder}/thumbnail.${ext}`;
             let mediaStr = `\n\n![${title}](${link})`;
-            if (ext === "mp4") mediaStr = `\n\n[![${title}](${link})](${link})`;
+
+            if (ext === "mp4")
+              mediaStr =
+                `\n\n<video width="600" height="400" controls>` +
+                `<source src="${link} type="video/mp4" />` +
+                `Video playback not supported` +
+                `</video>`;
 
             entryStr += mediaStr;
             break;
