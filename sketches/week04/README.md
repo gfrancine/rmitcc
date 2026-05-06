@@ -4,7 +4,7 @@
 
 ## [Coding Agents](sketch-agent)
 
-<video width="600" height="400" controls><source src="sketch-agent/thumbnail.mp4 type="video/mp4" />Video playback not supported</video>
+<video width="600" height="400" src="sketch-agent/thumbnail.mp4 controls></video>
 
 ## [Images & Macrotypography](sketch1)
 
@@ -16,7 +16,7 @@
 
 ## [Macrotypography / Parallax](sketch3)
 
-<video width="600" height="400" controls><source src="sketch3/thumbnail.mp4 type="video/mp4" />Video playback not supported</video>
+<video width="600" height="400" src="sketch3/thumbnail.mp4 controls></video>
 
 ## [Macrotypography / Grids](sketch4)
 
@@ -24,18 +24,18 @@
 
 ## [OOP / Forces](sketch5)
 
-<video width="600" height="400" controls><source src="sketch5/thumbnail.mp4 type="video/mp4" />Video playback not supported</video>
+<video width="600" height="400" src="sketch5/thumbnail.mp4 controls></video>
 
 ## [OOP / Forces 2](sketch6)
 
-<video width="600" height="400" controls><source src="sketch6/thumbnail.mp4 type="video/mp4" />Video playback not supported</video>
+<video width="600" height="400" src="sketch6/thumbnail.mp4 controls></video>
 
 ## [Macrotypography / Typing](sketch7)
 
-<video width="600" height="400" controls><source src="sketch7/thumbnail.mp4 type="video/mp4" />Video playback not supported</video>
+<video width="600" height="400" src="sketch7/thumbnail.mp4 controls></video>
 
 ## [Macrotypography / Parallax + Typing](sketch8)
 
-<video width="600" height="400" controls><source src="sketch8/thumbnail.mp4 type="video/mp4" />Video playback not supported</video>
+<video width="600" height="400" src="sketch8/thumbnail.mp4 controls></video>
 
 <!--REPLACE SKETCHES-->
