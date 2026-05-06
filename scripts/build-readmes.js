@@ -75,14 +75,20 @@ const MARKER = "<!--REPLACE SKETCHES-->";
  * Sketch Title
  * * /
  */
-function getSketchTitle(filePath) {
+function matchSketchHeader(filePath) {
   try {
     const content = fs.readFileSync(filePath, "utf8");
-    const commentRegex = /\/\*[\s\S]*?Week\s+\d+\s*\n(.*?)\n[\s\S]*?\*\//;
+    // beware carriage returns?
+    const commentRegex =
+      /\/\*[\s\S]*?Week\s+\d+[\s\r\n]+([^\r\n]+)[\s\r\n]+([\s\S]*?)\s*\*\//;
     const match = content.match(commentRegex);
 
     // Return the title if found, otherwise fallback to folder name
-    if (match) return match[1].trim();
+    if (match) {
+      const title = match[1].trim();
+      const description = match[2].length > 0 ? match[2] : null;
+      return { title, description };
+    }
   } catch (err) {
     return;
   }
@@ -117,20 +123,26 @@ function updateWeekReadmes() {
     const sketchMarkdown = sketches
       .map((sketchFolder) => {
         const sketchFolderPath = path.join(weekPath, sketchFolder);
-        const title = getSketchTitle(path.join(sketchFolderPath, "sketch.js"));
+        const header = matchSketchHeader(
+          path.join(sketchFolderPath, "sketch.js"),
+        );
 
         // Edit: don't create an entry if it doesn't have a proper header
-        if (!title) return "";
+        if (!header) return "";
+        console.log(header);
+        const { title, description } = header;
 
         // We use relative paths for the README links
         let entryStr = `\n## [${title}](${sketchFolder})`;
+
+        if (description) entryStr += `\n\n${description}`;
 
         // Edit: only add a thumbnail if it exists
         const THUMBNAIL_EXTS = ["png", "jpg", "jpeg", "svg", "gif"];
 
         for (const ext of THUMBNAIL_EXTS) {
           if (fs.existsSync(path.join(sketchFolderPath, "thumbnail." + ext))) {
-            entryStr += `\n![${title}](${sketchFolder}/thumbnail.${ext})`;
+            entryStr += `\n\n![${title}](${sketchFolder}/thumbnail.${ext})`;
             break;
           }
         }
