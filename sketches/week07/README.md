@@ -4,11 +4,11 @@
 
 ## [3D / Primitives](sketch1)
 
-<video width="600" height="400" src="sketch1/thumbnail.mp4 controls></video>
+<video width="600" height="400" src="sketch1/thumbnail.mp4" controls></video>
 
 ## [3D / Camera Movement](sketch1-2)
 
-<video width="600" height="400" src="sketch1-2/thumbnail.mp4 controls></video>
+<video width="600" height="400" src="sketch1-2/thumbnail.mp4" controls></video>
 
 ## [3D / Models](sketch1-3)
 
@@ -24,7 +24,7 @@
 
 ## [Sounds / "Jacob Collier Simulator"](sketch2)
 
-<video width="600" height="400" src="sketch2/thumbnail.mp4 controls></video>
+<video width="600" height="400" src="sketch2/thumbnail.mp4" controls></video>
 
 ## [Sounds / Beeping](sketch2-2)
 
