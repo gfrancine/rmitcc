@@ -169,7 +169,7 @@ let grid;
 
 async function setup() {
   bodyFont = await loadFont(SHARED_PATH + "fonts/TINY5x3-40.otf");
-  crackerImg = await loadImage("assets/bayercracker.png");
+  crackerImg = await loadImage("assets/bayercracker.jpeg");
   textFont(bodyFont);
 
   grid = new Grid(0.6, 0.8, 12, 12, 6, 6);

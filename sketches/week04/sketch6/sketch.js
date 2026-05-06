@@ -133,7 +133,7 @@ async function setup() {
   // https://dev.to/limzykenneth/asynchronous-p5js-20-458f
   font = await loadFont(SHARED_PATH + "fonts/TINY5x3-200.otf");
   pointImages = [
-    await loadImage("assets/bayercracker.png"),
+    await loadImage("assets/bayercracker.jpeg"),
     // await loadImage( "assets/biscuit.jpg"),
     // await loadImage( "assets/thins.jpg"),
   ];

@@ -5,3 +5,4 @@
 - [Week 4 — Macrotypography and OOP](sketches/week04/)
 - [Week 5 — Images and Video](sketches/week05/)
 - [Week 6 — Randomness and Noise](sketches/week06/)
+- [Week 7 — 3D and Sound](sketches/week06/)
