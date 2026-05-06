@@ -135,3 +135,9 @@ function mouseReleased() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+function keyPressed() {
+  if (key === "s") {
+    saveCanvas("mycanvas", "jpg");
+  }
+}
