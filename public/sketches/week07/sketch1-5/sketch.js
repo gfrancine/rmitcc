@@ -25,7 +25,6 @@ async function setup() {
     "../assets/fingers.webm",
     "../assets/fingers.mov",
   ]);
-  video.loop();
   video.hide();
 
   createCanvas(windowWidth, windowHeight, WEBGL);
@@ -36,7 +35,17 @@ async function setup() {
   messageTexture.fill(0);
   messageTexture.textAlign(CENTER, TOP);
   messageTexture.textSize(20);
-  messageTexture.text("Texture + Materials!", 0, 0, 400, 200);
+  messageTexture.text(
+    "Texture + Materials!\n(click anywhere to enable textures)",
+    0,
+    0,
+    400,
+    200,
+  );
+}
+
+function mouseClicked() {
+  video.loop();
 }
 
 function applyRotation() {
