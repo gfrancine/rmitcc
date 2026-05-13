@@ -12,7 +12,7 @@
 
 ## [Faces](sketch3)
 
-<video width="600" height="400" src="sketch3/thumbnail.mp4" controls loop></video>
+<video src="sketch3/thumbnail.mp4" width="100%" controls loop></video>
 
 ## [Drawing](sketch4)
 
@@ -20,7 +20,7 @@
 
 ## [Drawing / Velocity](sketch5)
 
-<video width="600" height="400" src="sketch5/thumbnail.mp4" controls loop></video>
+<video src="sketch5/thumbnail.mp4" width="100%" controls loop></video>
 
 ## [Drawing / Lines](sketch6)
 
@@ -28,10 +28,10 @@
 
 ## [Color Lerping](sketch7)
 
-<video width="600" height="400" src="sketch7/thumbnail.mp4" controls loop></video>
+<video src="sketch7/thumbnail.mp4" width="100%" controls loop></video>
 
 ## [Lerping / Sine Waves](sketch8)
 
-<video width="600" height="400" src="sketch8/thumbnail.mp4" controls loop></video>
+<video src="sketch8/thumbnail.mp4" width="100%" controls loop></video>
 
 <!--REPLACE SKETCHES-->
