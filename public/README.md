@@ -1,6 +1,10 @@
 # RMIT Creative Coding 2026
 
-See the published site to view my sketches: https://gfrancine.github.io/rmitcc
+Visit the published site to view my sketches: [https://gfrancine.github.io/rmitcc](https://gfrancine.github.io/rmitcc)
+
+Or see the source code on GitHub: [https://github.com/gfrancine/rmitcc](https://github.com/gfrancine/rmitcc)
+
+# Sketches
 
 - [Week 2 — Hello p5](sketches/week02/)
 - [Week 3 — Typography](sketches/week03/)
